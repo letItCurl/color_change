@@ -45,4 +45,10 @@ const stringToColour = function (str) {
   return ` #${colour}`
 }
 
+
+$( "body" ).append( '<label>Enter a seed:</label> <br>' );// eslint-disable-line
+$( "body" ).append( '<input id="seed" type="text">' );// eslint-disable-line
+$( "#seed" ).change(function() {
+  $('body').css('background-color', stringToColour($( "#seed" ).val()))
+});
 $('body').css('background-color', stringToColour('letItCurl')) // eslint-disable-line
