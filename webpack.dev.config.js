@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'The color change',
     }),
     new DashboardPlugin()
   ],

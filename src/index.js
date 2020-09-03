@@ -25,7 +25,7 @@ const stringToColour = function (str) {
   let numbers = []
 
   for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash)
+    hash = str.charCodeAt(i)^2 + ((hash << 8) - hash^0.5)
   }
 
   for (let i = 0; i < 3; i++) {
@@ -45,10 +45,13 @@ const stringToColour = function (str) {
   return ` #${colour}`
 }
 
+const color_change = function (str) {
+  $('body').css('background-color', stringToColour(str))
+}
 
 $( "body" ).append( '<label>Enter a seed:</label> <br>' );// eslint-disable-line
-$( "body" ).append( '<input id="seed" type="text">' );// eslint-disable-line
+$( "body" ).append( '<input id="seed" placeholder="type here and hit enter" type="text">' );// eslint-disable-line
 $( "#seed" ).change(function() {
-  $('body').css('background-color', stringToColour($( "#seed" ).val()))
+  color_change($( "#seed" ).val())
 });
-$('body').css('background-color', stringToColour('letItCurl')) // eslint-disable-line
+color_change('letItCurl')// eslint-disable-line
