@@ -26,6 +26,10 @@ $ npm run start
 
 ![](./dashboard.png)
 
+Just enter a seed in the input form, in the browser.
+
+The color of the screen will change within a define range of color ☄️
+
 # About me
 
 <table style="border: none;">
